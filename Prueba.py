@@ -14,7 +14,8 @@ else:
 	Md = Billete %200 % 100 % 20 //10                                     
 	Mc =Billete %200 % 100 % 20 % 10 // 5 
 	Mds = Billete %200 % 100 % 20 % 10 % 5 // 2 
-	Mdu= Billete%200 % 100 % 20 % 10 % 5 % 2 // 1          
+
+
 	print("Su cambio es",feria)
 	print("Billetes de 200 ",Bd)
 	print("Billetes de 100 ",Bc)
@@ -22,6 +23,5 @@ else:
 	print("Monedas de 10",Md)
 	print("Monedas de 5 ",Mc)
 	print('Monedas de 2',Mds)
-	print("Monedas de 1 ",Mdu)
 
 print(cambio(feria))
