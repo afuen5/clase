@@ -28,7 +28,9 @@ vel = 2
 
 #parametros oponente
 
-#x_opo =
+x_opo = 200
+y_opo = 20
+des_x_opo = 0
 
 def dibujarPersonaje(x,y,color, screen, w, h):
 	pygame.draw.rect(screen,color, (x,y,w*6,h))
@@ -40,43 +42,38 @@ while not gameover:
 		if event.type == pygame.QUIT:
 			gameover = True
 		elif event.type == pygame.KEYDOWN:
-			#if event.key == pygame.K_UP:
-			#	des_y = -vel
-			#elif event.key == pygame.K_DOWN:
-			#	des_y = vel
 			if event.key == pygame.K_LEFT:
 				des_x = -vel
 			elif event.key == pygame.K_RIGHT:
 				des_x = vel
 
-			#if event.key == pygame.K_a:
-				#des_x = -vel
-			#elif event.key == pygame.K.d:
-				#des_x = vel
+			if event.key == pygame.K_a:
+				des_x_opo = -vel
+			elif event.key == pygame.K_d:
+				des_x_opo = vel
 
 		elif event.type == pygame.KEYUP:
-			#if event.key == pygame.K_UP:
-			#	des_y = 0
-			#elif event.key == pygame.K_DOWN:
-			#	des_y = 0
+
 			if event.key == pygame.K_LEFT:
 				des_x = 0
 			elif event.key == pygame.K_RIGHT:
 				des_x = 0
 
-			#if event.key == pygame.K_a:
-				#des_x = 0
-			#elif event.key == pygame.K_d:
-				#des_x = 0
+			if event.key == pygame.K_a:
+				des_x_opo = 0
+			elif event.key == pygame.K_d:
+				des_x_opo = 0
 
 
 
 	#ejecutar accion
 	x_coord = x_coord + des_x
-	y_coord = y_coord + des_y
+	x_opo = x_opo + des_x_opo
+
+
 	screen.fill(white)
 	dibujarPersonaje(x_coord, y_coord, black, screen, width, height)
-	#dibujarPersonaje(x_coord_opo, y_coord_opo, black, screen, width, height)
+	dibujarPersonaje(x_opo, y_opo, black, screen, width, height)
 	pygame.display.flip()
 	clock.tick(FPS)
 pygame.quit()
